@@ -60,6 +60,7 @@ body {
   padding-bottom: 6rem;
 }
 
+// * MARGIN BOTTOM
 .mg-bt-sm {
   margin-bottom: 1.5rem;
 }
@@ -72,6 +73,22 @@ body {
 }
 .mg-bt-hg {
   margin-bottom: 8rem;
+}
+
+// * MARGIN TOP
+
+.mg-tp-sm {
+  margin-top: 2rem;
+}
+
+.mg-tp-md {
+  margin-top: 4rem;
+}
+.mg-tp-lg {
+  margin-top: 6rem;
+}
+.mg-tp-hg {
+  margin-top: 10rem;
 }
 
 .container {
@@ -181,9 +198,21 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
+  //* white button
   &--white {
     background-color: $color-white;
-    color: inherit;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: inherit;
+    }
+  }
+
+  //* green button
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
 
     &::after {
       background-color: inherit;
@@ -274,41 +303,41 @@ body {
   padding: 25rem 0;
   margin-top: -20vh;
 
-  //* secondary heading
-
-  .heading-secondary {
-    text-transform: uppercase;
-    background-image: linear-gradient(
-      to right,
-      $color-primary-light,
-      $color-primary-dark
-    );
-    display: inline-block;
-    background-clip: text;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: transparent;
-    -webkit-background-clip: text;
-    letter-spacing: 0.2rem;
-  }
-
-  //* heading tertiary
-  .heading-tertiary {
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  //* Paragraph
-
-  .paragraph {
-    font-size: 1.6rem;
-  }
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5rem;
   }
+}
+//* secondary heading
+
+.heading-secondary {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  display: inline-block;
+  background-clip: text;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-background-clip: text;
+  letter-spacing: 0.2rem;
+}
+
+//* heading tertiary
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+//* Paragraph
+
+.paragraph {
+  font-size: 1.6rem;
 }
 
 .composition {
@@ -332,5 +361,244 @@ body {
   &__photo--p3 {
     left: 20%;
     top: 10rem;
+  }
+}
+
+// *section feature
+
+.section-feature {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  text-align: center;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 21%);
+  grid-gap: 6rem;
+  justify-content: center;
+  align-items: center;
+  transform: skewY(7deg);
+}
+.feature-box {
+  background-color: rgba($color-white, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+
+  &__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+}
+
+// * section tours
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -10rem;
+  color: #000;
+
+  .tours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 6rem;
+    justify-content: center;
+  }
+  .card {
+    height: 52rem;
+    perspective: 150rem;
+    &:hover .card__side {
+      transform: rotateY(-180deg);
+    }
+  }
+
+  .card__side {
+    height: 52rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: all 1s;
+    transform-style: preserve-3d;
+  }
+
+  .card__front,
+  .card__back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .card__front {
+    z-index: 2;
+    backface-visibility: hidden;
+  }
+
+  .card__picture {
+    background-blend-mode: screen;
+    height: 23rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+      background-size: cover;
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../img/nat-6.jpg);
+      background-size: cover;
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg);
+      background-size: cover;
+    }
+  }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+    &-span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+  }
+
+  .card__heading-span--1 {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary-light, 0.85),
+      rgba($color-secondary-dark, 0.85)
+    );
+  }
+
+  .card__heading-span--2 {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.85),
+      rgba($color-primary-dark, 0.85)
+    );
+  }
+
+  .card__heading-span--3 {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-tertiary-light, 0.85),
+      rgba($color-tertiary-dark, 0.85)
+    );
+  }
+  .card__details {
+    padding: 2.5rem 3rem;
+    color: $color-grey-dark;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    li {
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.5rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-grey-light-2;
+      }
+    }
+  }
+
+  // * CARD FRONT
+  .card__back {
+    background-color: red;
+    z-index: 1;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary-dark
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      );
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: $color-white;
+
+    .value {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 6rem;
+      font-weight: 100;
+    }
   }
 }

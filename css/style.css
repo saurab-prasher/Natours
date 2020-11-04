@@ -37,6 +37,18 @@ body {
 .mg-bt-hg {
   margin-bottom: 8rem; }
 
+.mg-tp-sm {
+  margin-top: 2rem; }
+
+.mg-tp-md {
+  margin-top: 4rem; }
+
+.mg-tp-lg {
+  margin-top: 6rem; }
+
+.mg-tp-hg {
+  margin-top: 10rem; }
+
 .container {
   max-width: 114rem;
   margin: 0 auto; }
@@ -114,8 +126,14 @@ body {
 
 .btn--white {
   background-color: #fff;
-  color: inherit; }
+  color: #777; }
   .btn--white::after {
+    background-color: inherit; }
+
+.btn--green {
+  background-color: #55c57a;
+  color: #fff; }
+  .btn--green::after {
     background-color: inherit; }
 
 .btn--animated {
@@ -173,26 +191,29 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
-  .section-about .heading-secondary {
-    text-transform: uppercase;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
-    display: inline-block;
-    background-clip: text;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: transparent;
-    -webkit-background-clip: text;
-    letter-spacing: 0.2rem; }
-  .section-about .heading-tertiary {
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-transform: uppercase; }
-  .section-about .paragraph {
-    font-size: 1.6rem; }
   .section-about__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5rem; }
+
+.heading-secondary {
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  background-clip: text;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-background-clip: text;
+  letter-spacing: 0.2rem; }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
 
 .composition {
   position: relative; }
@@ -210,3 +231,141 @@ body {
   .composition__photo--p3 {
     left: 20%;
     top: 10rem; }
+
+.section-feature {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  text-align: center;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 21%);
+  grid-gap: 6rem;
+  justify-content: center;
+  align-items: center;
+  transform: skewY(7deg); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -10rem;
+  color: #000; }
+  .section-tours .tours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 6rem;
+    justify-content: center; }
+  .section-tours .card {
+    height: 52rem;
+    perspective: 150rem; }
+    .section-tours .card:hover .card__side {
+      transform: rotateY(-180deg); }
+  .section-tours .card__side {
+    height: 52rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: all 1s;
+    transform-style: preserve-3d; }
+  .section-tours .card__front,
+  .section-tours .card__back {
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+  .section-tours .card__front {
+    z-index: 2;
+    backface-visibility: hidden; }
+  .section-tours .card__picture {
+    background-blend-mode: screen;
+    height: 23rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .section-tours .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+      background-size: cover; }
+    .section-tours .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg);
+      background-size: cover; }
+    .section-tours .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+      background-size: cover; }
+  .section-tours .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+    .section-tours .card__heading-span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone; }
+  .section-tours .card__heading-span--1 {
+    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .section-tours .card__heading-span--2 {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+  .section-tours .card__heading-span--3 {
+    background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .section-tours .card__details {
+    padding: 2.5rem 3rem;
+    color: #777; }
+    .section-tours .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+    .section-tours .card__details li {
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.5rem; }
+      .section-tours .card__details li:not(:last-child) {
+        border-bottom: 1px solid #eee; }
+  .section-tours .card__back {
+    background-color: red;
+    z-index: 1;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #fff; }
+    .section-tours .card__back--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+    .section-tours .card__back--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+    .section-tours .card__back--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+    .section-tours .card__back .value {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem; }
+    .section-tours .card__back .price {
+      font-size: 6rem;
+      font-weight: 100; }
